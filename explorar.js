@@ -1,6 +1,6 @@
 const prompt = require("prompt-sync")();
 async function consultaPokemon(){
-    let queryPokemon = await fetch("https://pokeapi.co/api/v2/pokemon/bulbasaur");
+    let queryPokemon = await fetch("https://pokeapi.co/api/v2/pokemon/snorlax");
     console.log("Status de la consulta: "+queryPokemon.status);
     if(!queryPokemon.ok){
         console.log("No se pudo consultar la tasa. Código:", respuesta.status);
@@ -27,7 +27,8 @@ async function consultaPokemon(){
     numero = 1;
     for(const i of datos.stats){
         console.log("Estadística #"+numero+" Nombre estadística: "+i.stat.name+ 
-            " - Valor estadística: "+i.base_stat);
+            " - Valor estadística: "+i.base_stat)
+        //console.log(i.stat); solo probando jeje :D
         numero++;
     }
     numero = 1;
